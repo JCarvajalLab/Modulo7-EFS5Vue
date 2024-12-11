@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="asset/styles.css" />
-        <title>Document</title>
-    </head>
-    <body>
-        <div id="app" class="container">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/styles.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>Detalles del Usuario 6</h1>
+        <div v-if="user6">
+            <p><strong>ID:</strong> {{ user6.id }}</p>
+            <p><strong>Nombre:</strong> {{ user6.name }}</p>
+            <p><strong>Email:</strong> {{ user6.email }}</p>
+            <p><strong>Direccion:</strong> {{ user6.address.street }}, {{ user6.address.suite  }}</p>
+            <p><strong>Ciudad:</strong> {{ user6.address.city }}</p>
+            <p><strong>Telefono:</strong> {{ user6.phone }}</p>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="asset/main.js"></script>
-    </body>
+
+        <h2>Todos los demás usuarios</h2>
+        <ul>
+            <li v-for="user in otherUsers" :key="user.id">
+                <p><strong>ID:</strong> {{ user.id }}</p>
+                <p><strong>Nombre:</strong> {{ user.name }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="asset/main.js"></script>
+</body>
 </html>
