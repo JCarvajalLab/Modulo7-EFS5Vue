@@ -8,18 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app" class="container mt-5">
-        <h1>Detalles del Usuario 6</h1>
-        <div v-if="user6" class="mb-4">
-            <p><strong>ID:</strong> {{ user6.id }}</p>
-            <p><strong>Nombre:</strong> {{ user6.name }}</p>
-            <p><strong>Email:</strong> {{ user6.email }}</p>
-            <p><strong>Direccion:</strong> {{ user6.address.street }}, {{ user6.address.suite  }}</p>
-            <p><strong>Ciudad:</strong> {{ user6.address.city }}</p>
-            <p><strong>Telefono:</strong> {{ user6.phone }}</p>
+    <div id="app" class="container mt-5 ">
+        <div class="usuario6 card text-bg-success mb-3 " style="width: 18rem; margin: 0 auto;">
+            <div class="card-body">
+                <h1 class="card-header">Detalles del Usuario 6</h1>
+                <div v-if="user6" class="mb-4">
+                    <p class="card-text"><strong>ID:</strong> {{ user6.id }}</p>
+                    <p class="card-text"><strong>Nombre:</strong> {{ user6.name }}</p>
+                    <p class="card-text"><strong>Email:</strong> {{ user6.email }}</p>
+                    <p class="card-text"><strong>Direccion:</strong> {{ user6.address.street }}, {{ user6.address.suite }}</p>
+                    <p class="card-text"><strong>Ciudad:</strong> {{ user6.address.city }}</p>
+                    <p class="card-text"><strong>Telefono:</strong> {{ user6.phone }}</p>
+                </div>
+            </div>
         </div>
-
-        <h2>Todos los demás usuarios</h2>
+        <h2 style="text-align: center;">Todos los usuarios</h2>
         <div class="accordion" id="accordionExample">
             <div class="accordion-item" v-for="user in otherUsers" :key="user.id">
                 <h2 class="accordion-header" :id="'heading' + user.id">
